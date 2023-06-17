@@ -1,0 +1,9 @@
+[submodule "breakpad"]
+	path = breakpad
+	url = https://github.com/google/breakpad.git
+[submodule "androidNativeActivity"]
+	path = androidNativeActivity
+	url = https://github.com/lanhuaguizha/androidNativeActivity.git
+[submodule "linux-syscall-support"]
+	path = linux-syscall-support
+	url = https://chromium.googlesource.com/linux-syscall-support
