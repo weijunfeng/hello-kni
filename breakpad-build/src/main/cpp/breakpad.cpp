@@ -9,7 +9,7 @@ bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
 }
 
 void initBreakpad(const char *path) {
-    google_breakpad::MinidumpDescriptor descriptor(path);
-    google_breakpad::ExceptionHandler eh(descriptor, nullptr, DumpCallback,
-                                         nullptr, true, -1);
+    static google_breakpad::MinidumpDescriptor descriptor(path);
+    static google_breakpad::ExceptionHandler eh(descriptor, nullptr, DumpCallback,
+                                                nullptr, true, -1);
 }
