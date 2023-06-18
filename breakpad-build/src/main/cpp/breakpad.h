@@ -7,8 +7,9 @@
 
 /**
  * 初始化breakpad
- * @param path 崩溃文件保存路径
+ * @param dmpDir 崩溃文件保存路径, 必须保证文件目录存在
+ * @return true 初始化成功, false 初始化失败
  */
-void initBreakpad(const char *path);
+bool initBreakpad(const char *dmpDir);
 
 #endif //HELLO_KNI_BREAKPAD_H
