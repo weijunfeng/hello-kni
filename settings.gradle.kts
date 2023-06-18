@@ -1,6 +1,6 @@
 include(":breakpad-build")
 
-//pluginManagement {
+pluginManagement {
 //    resolutionStrategy {
 //        eachPlugin {
 //            if (requested.id.id == "org.jetbrains.kotlin.multiplatform") {
@@ -11,15 +11,16 @@ include(":breakpad-build")
 //            }
 //        }
 //    }
-//
-//    repositories {
-//        gradlePluginPortal()
-//        google()
-//        jcenter()
-//        mavenCentral()
+
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
 //        maven("https://dl.bintray.com/kotlin/kotlin-dev")
 //        maven("https://dl.bintray.com/kotlin/kotlin-eap")
-//    }
-//}
+        gradlePluginPortal()
+    }
+}
 include(":app", ":nativeLib")
 
+include(":protobuf-build")
