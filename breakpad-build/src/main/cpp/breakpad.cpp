@@ -10,9 +10,18 @@
 #include <iostream>
 #include <sys/stat.h>
 
+BreakpadCallback globalBreakpadCallback = nullptr;
+
 bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
                   void *context,
                   bool succeeded) {
+    if (globalBreakpadCallback != nullptr) {
+        auto dmpFilePath = descriptor.path();
+        if (dmpFilePath == nullptr) {
+            return globalBreakpadCallback(succeeded, "");
+        }
+        return globalBreakpadCallback(succeeded, dmpFilePath);
+    }
     return succeeded;
 }
 
@@ -67,6 +76,10 @@ bool createDirectories(const std::string &path) {
     return createDirectory(path);
 }
 
+bool hasInitBreakpad() {
+    return globalBreakpadCallback != nullptr;
+}
+
 //bool directoryExists(const std::string &path) {
 //    //使用 std::filesystem::is_directory() 函数来检查给定路径是否为一个目录。fs::status() 函数用于获取路径的状态信息
 //    return std::__fs::filesystem::is_directory(std::__fs::filesystem::status(path));
@@ -77,11 +90,12 @@ bool createDirectories(const std::string &path) {
 //    return std::__fs::filesystem::exists(filePath) && std::__fs::filesystem::is_regular_file(filePath);
 //}
 
-bool initBreakpad(const char *dmpDir) {
+bool initBreakpad(const char *dmpDir, BreakpadCallback breakpadCallback) {
     try {
         if (!directoryExists(dmpDir) && !createDirectories(dmpDir)) {
             return false;
         }
+        globalBreakpadCallback = breakpadCallback;
         static google_breakpad::MinidumpDescriptor descriptor(dmpDir);
         static google_breakpad::ExceptionHandler eh(descriptor, nullptr, DumpCallback,
                                                     nullptr, true, -1);
