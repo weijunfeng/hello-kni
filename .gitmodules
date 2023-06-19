@@ -7,3 +7,9 @@
 [submodule "linux-syscall-support"]
 	path = linux-syscall-support
 	url = https://chromium.googlesource.com/linux-syscall-support
+[submodule "breakpad-cmake"]
+	path = breakpad-cmake
+	url = https://github.com/Niap/breakpad-cmake.git
+[submodule "ios-cmake"]
+	path = ios-cmake
+	url = https://github.com/leetal/ios-cmake.git
