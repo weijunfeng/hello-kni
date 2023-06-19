@@ -7,6 +7,9 @@
 
 #include <sys/stat.h>
 
+#include <iostream>
+#include <sys/stat.h>
+
 bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
                   void *context,
                   bool succeeded) {
@@ -25,11 +28,43 @@ bool fileExists(const std::string &filePath) {
 }
 
 bool directoryExists(const std::string &directoryPath) {
+    if (directoryPath.empty()) {
+        return false;
+    }
     struct stat info{};
     if (stat(directoryPath.c_str(), &info) != 0) {
         return false; // 目录不存在
     }
     return S_ISDIR(info.st_mode);
+}
+
+
+bool createDirectory(const std::string &path) {
+    if (path.empty()) {
+        return false;
+    }
+    if (directoryExists(path)) {
+        return true;
+    }
+    if (mkdir(path.c_str(), S_IRWXU | S_IRWXG | S_IRWXO) == 0 || errno == EEXIST) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool createDirectories(const std::string &path) {
+    if (path.empty()) {
+        return false;
+    }
+    size_t pos = 0;
+    while ((pos = path.find('/', pos + 1)) != std::string::npos) {
+        std::string subPath = path.substr(0, pos);
+        if (!createDirectory(subPath)) {
+            return false;
+        }
+    }
+    return createDirectory(path);
 }
 
 //bool directoryExists(const std::string &path) {
@@ -43,11 +78,15 @@ bool directoryExists(const std::string &directoryPath) {
 //}
 
 bool initBreakpad(const char *dmpDir) {
-    if (!directoryExists(dmpDir)) {
+    try {
+        if (!directoryExists(dmpDir) && !createDirectories(dmpDir)) {
+            return false;
+        }
+        static google_breakpad::MinidumpDescriptor descriptor(dmpDir);
+        static google_breakpad::ExceptionHandler eh(descriptor, nullptr, DumpCallback,
+                                                    nullptr, true, -1);
+        return true;
+    } catch (const std::exception &exception) {
         return false;
     }
-    static google_breakpad::MinidumpDescriptor descriptor(dmpDir);
-    static google_breakpad::ExceptionHandler eh(descriptor, nullptr, DumpCallback,
-                                                nullptr, true, -1);
-    return true;
 }
