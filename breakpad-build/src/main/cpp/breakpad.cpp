@@ -6,9 +6,10 @@
 #include <fstream>
 
 #include <sys/stat.h>
-
 #include <iostream>
-#include <sys/stat.h>
+#include <iomanip>
+#include <sstream>
+#include <string>
 
 BreakpadCallback globalBreakpadCallback = nullptr;
 
@@ -35,6 +36,42 @@ bool fileExists(const std::string &filePath) {
     file.close();
     return fileGood;
 }
+
+std::string formatSize(std::uintmax_t size) {
+    static const char *suffixes[] = {"B", "KB", "MB", "GB", "TB"};
+    std::string result;
+    int suffixIndex = 0;
+
+    while (size > 1024 && suffixIndex < 4) {
+        size /= 1024;
+        ++suffixIndex;
+    }
+
+    std::stringstream ss;
+    ss << std::fixed << std::setprecision(2) << size;
+    ss >> result;
+    result += " ";
+    result += suffixes[suffixIndex];
+    return result;
+}
+
+//std::uintmax_t getFileSize(const std::string &filename) {
+//    try {
+//        return std::__fs::filesystem::file_size(filename);
+//    } catch (const std::__fs::filesystem::filesystem_error &e) {
+//        std::cerr << "Failed to get file size: " << e.what() << std::endl;
+//        return 0;
+//    }
+//}
+
+long long getFileSize(const char *filename) {
+    struct stat fileStat{};
+    if (stat(filename, &fileStat) == 0) {
+        return fileStat.st_size;
+    }
+    return -1;  // 获取文件大小失败
+}
+
 
 bool directoryExists(const std::string &directoryPath) {
     if (directoryPath.empty()) {
