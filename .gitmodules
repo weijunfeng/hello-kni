@@ -13,3 +13,6 @@
 [submodule "ios-cmake"]
 	path = ios-cmake
 	url = https://github.com/leetal/ios-cmake.git
+[submodule "googletest"]
+	path = googletest
+	url = https://github.com/google/googletest.git

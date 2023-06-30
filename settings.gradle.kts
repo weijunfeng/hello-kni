@@ -1,3 +1,4 @@
+include(":nativeunittest")
 
 pluginManagement {
     resolutionStrategy {
