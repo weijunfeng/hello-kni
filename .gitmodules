@@ -16,3 +16,6 @@
 [submodule "googletest"]
 	path = googletest
 	url = https://github.com/google/googletest.git
+[submodule "ndk-samples"]
+	path = ndk-samples
+	url = https://github.com/android/ndk-samples.git
