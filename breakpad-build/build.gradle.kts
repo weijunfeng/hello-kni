@@ -19,6 +19,10 @@ android {
 //                arguments(
 //                    "-DANDROID_STL=c++_shared"
 //                )
+                val breakpadVersion = Runtime.getRuntime()
+                    .exec("git -C /Users/zero/Documents/github/工具集/hello-kni/breakpad rev-parse --short HEAD")
+                    .inputStream.buffered().reader().readText()
+                println("breakpadVersion = $breakpadVersion")
                 targets("breakpad") // 指定targets输出为静态库
             }
         }
