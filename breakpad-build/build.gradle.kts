@@ -16,9 +16,10 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags("-std=c++14")
-//                arguments(
+                arguments(
+                    "-DGIT_BREAKPAD=${breakpadGit()}"
 //                    "-DANDROID_STL=c++_shared"
-//                )
+                )
                 targets("breakpad") // 指定targets输出为静态库
             }
         }
@@ -27,7 +28,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     externalNativeBuild {
@@ -51,4 +55,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("com.android.support.test:runner:1.0.2")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
+}
+
+fun breakpadGit(): String {
+    return Runtime.getRuntime()
+        .exec("git -C ${projectDir}/../breakpad rev-parse --short HEAD").inputStream.use {
+        it.bufferedReader().readText().trim()
+    }
 }

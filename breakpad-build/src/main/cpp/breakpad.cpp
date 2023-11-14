@@ -141,3 +141,7 @@ bool initBreakpad(const char *dmpDir, BreakpadCallback breakpadCallback) {
         return false;
     }
 }
+
+std::string breakpadGit() {
+    return _GIT_BREAKPAD;
+}

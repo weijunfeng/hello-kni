@@ -22,6 +22,8 @@ set(LINUX_SYSCALL_SUPPORT_DIR "${PROJECT_SOURCE_DIR}/../../../../linux-syscall-s
 file(COPY ${LINUX_SYSCALL_SUPPORT_DIR}/linux_syscall_support.h DESTINATION "${PROJECT_SOURCE_DIR}/../../../build/linux-syscall-support/third_party/lss")
 include_directories("${PROJECT_SOURCE_DIR}/../../../build/linux-syscall-support")
 
+add_definitions(-D_GIT_BREAKPAD=\"${GIT_BREAKPAD}\")
+
 file(GLOB GOOGLE_BREAKPAD_SOURCE
         ${GOOGLE_BREAKPAD_DIR}/src/client/linux/crash_generation/crash_generation_client.cc
         ${GOOGLE_BREAKPAD_DIR}/src/client/linux/dump_writer_common/thread_info.cc

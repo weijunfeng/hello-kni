@@ -5,6 +5,8 @@
 #ifndef HELLO_KNI_BREAKPAD_H
 #define HELLO_KNI_BREAKPAD_H
 
+#include <string>
+
 /**
  * breakpad处理回调
  * @param succeeded dmp 指示小型转储文件是否已成功写入
@@ -16,6 +18,12 @@
  */
 typedef bool (*BreakpadCallback)(bool succeeded, const char *dmpFilePath);
 
+
+/**
+ * 获取当前使用的breakpad git版本信息
+ * @return 当前使用的breakpad git版本信息
+ */
+std::string breakpadGit();
 
 /**
  * 是否已经初始化breakpad
