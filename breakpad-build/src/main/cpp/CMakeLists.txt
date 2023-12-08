@@ -17,6 +17,8 @@ set(GOOGLE_BREAKPAD_DIR "${PROJECT_SOURCE_DIR}/../../../../breakpad")
 message("GOOGLE_BREAKPAD_DIR == ${PROJECT_SOURCE_DIR}")
 message("GOOGLE_BREAKPAD_DIR == ${GOOGLE_BREAKPAD_DIR}")
 
+add_definitions(-D_GIT_BREAKPAD=\"${GIT_BREAKPAD}\")
+
 IF (CMAKE_SYSTEM_NAME MATCHES "iOS")
         ADD_DEFINITIONS(-DUSE_PROTECTED_ALLOCATIONS=0)
 #        复制于breakpad/src/client/ios工程
