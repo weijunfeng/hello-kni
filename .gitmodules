@@ -19,3 +19,6 @@
 [submodule "ndk-samples"]
 	path = ndk-samples
 	url = https://github.com/android/ndk-samples.git
+[submodule "localCTP"]
+	path = localCTP
+	url = https://github.com/dearleeyoung/LocalCTP.git
