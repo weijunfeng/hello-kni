@@ -19,7 +19,7 @@ android {
                     "-DANDROID_STL=c++_shared"
                 )
                 cppFlags("-std=c++14")
-//                targets("localCTP")
+                targets("localCTP")
             }
         }
         ndk {

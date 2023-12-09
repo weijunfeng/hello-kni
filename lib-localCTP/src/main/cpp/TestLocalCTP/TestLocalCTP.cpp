@@ -7,11 +7,15 @@
 #include "stdafx.h"
 #include <fstream> // std::ofstream
 #include "ThostFtdcTraderApi.h"//CTP交易的头文件
+
+#ifdef __ANDROID__
+
 #include "android_logcat_buf.h"
 
-CThostFtdcInputOrderField generateNewOrderMsg(const char* OrderRef, const char* InstrumentID = "MA401")
-{
-    CThostFtdcInputOrderField InputOrder = { 0 };
+#endif
+
+CThostFtdcInputOrderField generateNewOrderMsg(const char *OrderRef, const char *InstrumentID = "MA401") {
+    CThostFtdcInputOrderField InputOrder = {0};
     strcpy(InputOrder.UserID, "TestUserID");
     strcpy(InputOrder.InvestorID, "TestUserID");
     strcpy(InputOrder.AccountID, "TestUserID");
@@ -178,7 +182,9 @@ class MySpi : public CThostFtdcTraderSpi
 int testLocalCTP(const std::string &instrument_csv_path)
 {
     // 1. 设置输出重定向到 logcat上
+#ifdef __ANDROID__
     AndroidLogcatBuf::redirect_stdout();
+#endif
     // 2. 开启结算监控处理
     CThostFtdcTraderApi::startSettlementMonitor(instrument_csv_path);
     // 3. 创建 api 使用
