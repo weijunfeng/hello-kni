@@ -5,32 +5,32 @@
 
 namespace localCTP{
 
-constexpr TThostFtdcErrorMsgType ErrMsgUserInfoIsEmpty = "CTP:ÈÏÖ¤Ê§°Ü(UserIDºÍBrokerID²»ÄÜÎª¿ÕÅ¶)";
-constexpr TThostFtdcErrorMsgType ErrMsgUserInfoNotSameAsLastTime = "CTP:ÈÏÖ¤Ê§°Ü(UserIDºÍBrokerIDĞèÒªºÍÉÏ´ÎµÇÂ¼Ê±ÏàÍ¬Å¶)";
-constexpr TThostFtdcErrorMsgType ErrMsgNotAuth = "CTP:µÇÂ¼Ê§°Ü(Ã»ÓĞÈÏÖ¤)";
-constexpr TThostFtdcErrorMsgType ErrMsgUserInfoNotSameAsAuth = "CTP:µÇÂ¼Ê§°Ü(UserIDºÍBrokerIDĞèÒªºÍÈÏÖ¤Ê±ÏàÍ¬Å¶)";
-constexpr TThostFtdcErrorMsgType ErrMsgDuplicateOrder = "CTP:ÖØ¸´µÄ±¨µ¥(OrderRefĞè±È´ËÇ°µÄ×î´óÖµÒª´óÅ¶)";
-constexpr TThostFtdcErrorMsgType ErrMsg_INVALID_ORDERSIZE = "CTP:²»ºÏ·¨µÄ±¨µ¥ÊıÁ¿(ĞèÎªÕıÊı)";
-constexpr TThostFtdcErrorMsgType ErrMsg_EXCHANGE_ID_IS_WRONG = "CTP:½»Ò×Ëù´úÂë´íÎó";
-constexpr TThostFtdcErrorMsgType ErrMsg_INSTRUMENT_NOT_FOUND = "CTP:ÕÒ²»µ½ºÏÔ¼";
-constexpr TThostFtdcErrorMsgType ErrMsg_BAD_PRICE_VALUE = "CTP:²»Ö§³ÖµÄ¼Û¸ñ(ĞèÒªÊÇPriceTickµÄÕûÊı±¶):";
-constexpr TThostFtdcErrorMsgType ErrMsg_NotExistOrder = "CTP:¶©µ¥²»´æÔÚÅ¶";
-constexpr TThostFtdcErrorMsgType ErrMsg_AlreadyDoneOrder = "CTP:¶©µ¥ÒÑ½áÊøÎŞ·¨ÔÙ³·Å¶";
-constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportModifyOrder = "CTP:¶©µ¥Ö»ÄÜ³·µ¥ÎŞ·¨¸Äµ¥Å¶";
-constexpr TThostFtdcErrorMsgType ErrMsg_PRICETYPE_NOTSUPPORT_BYEXCHANGE = "CTP:½»Ò×Ëù²»Ö§³ÖµÄ¼Û¸ñÀàĞÍ(OrderPriceType)";
-constexpr TThostFtdcErrorMsgType ErrMsg_BAD_FIELD_ONLY_SPECULATION = "CTP:±¨µ¥×Ö¶ÎÓĞÎó(±¾ÏµÍ³Ö»Ö§³ÖÍ¶»úÀàĞÍ)(CombHedgeFlag)";
-constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportContingentCondition = "CTP:²»Ö§³ÖÌØÊâµÄÌõ¼şµ¥Å¶(ContingentCondition)";
-constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportTimeCondition = "CTP:²»Ö§³ÖµÄÓĞĞ§ÆÚÀàĞÍÅ¶(TimeCondition)";
-constexpr TThostFtdcErrorMsgType ErrMsg_NoMarketData = "CTP:¸ÃºÏÔ¼Ã»ÓĞĞĞÇéÊı¾İ:";
-constexpr TThostFtdcErrorMsgType ErrMsg_INSTRUMENT_MARGINRATE_NOT_FOUND = "CTP:¸ÃºÏÔ¼Ã»ÓĞ±£Ö¤½ğÂÊÊı¾İ";
-constexpr TThostFtdcErrorMsgType ERRMSG_INSTRUMENT_COMMISSIONRATE_NOT_FOUND = "CTP:¸ÃºÏÔ¼Ã»ÓĞÊÖĞø·ÑÂÊÊı¾İ:";// not used
-constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_NOT_ENOUGH = "CTP:¿ÉÓÃ×Ê½ğ²»×ã";
-constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_POSITION_NOT_ENOUGH = "CTP:Æ½²ÖÊ±³Ö²Ö²»×ã,µ±Ç°¿ÉÆ½ÊıÁ¿ÊÇ:";
-constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_TODAY_POSITION_NOT_ENOUGH = "CTP:Æ½½ñÊ±³Ö²Ö²»×ã,µ±Ç°¿ÉÆ½ÊıÁ¿ÊÇ:";
+constexpr TThostFtdcErrorMsgType ErrMsgUserInfoIsEmpty = "CTP:è®¤è¯å¤±è´¥(UserIDå’ŒBrokerIDä¸èƒ½ä¸ºç©ºå“¦)";
+constexpr TThostFtdcErrorMsgType ErrMsgUserInfoNotSameAsLastTime = "CTP:è®¤è¯å¤±è´¥(UserIDå’ŒBrokerIDéœ€è¦å’Œä¸Šæ¬¡ç™»å½•æ—¶ç›¸åŒå“¦)";
+constexpr TThostFtdcErrorMsgType ErrMsgNotAuth = "CTP:ç™»å½•å¤±è´¥(æ²¡æœ‰è®¤è¯)";
+constexpr TThostFtdcErrorMsgType ErrMsgUserInfoNotSameAsAuth = "CTP:ç™»å½•å¤±è´¥(UserIDå’ŒBrokerIDéœ€è¦å’Œè®¤è¯æ—¶ç›¸åŒå“¦)";
+constexpr TThostFtdcErrorMsgType ErrMsgDuplicateOrder = "CTP:é‡å¤çš„æŠ¥å•(OrderReféœ€æ¯”æ­¤å‰çš„æœ€å¤§å€¼è¦å¤§å“¦)";
+constexpr TThostFtdcErrorMsgType ErrMsg_INVALID_ORDERSIZE = "CTP:ä¸åˆæ³•çš„æŠ¥å•æ•°é‡(éœ€ä¸ºæ­£æ•°)";
+constexpr TThostFtdcErrorMsgType ErrMsg_EXCHANGE_ID_IS_WRONG = "CTP:äº¤æ˜“æ‰€ä»£ç é”™è¯¯";
+constexpr TThostFtdcErrorMsgType ErrMsg_INSTRUMENT_NOT_FOUND = "CTP:æ‰¾ä¸åˆ°åˆçº¦";
+constexpr TThostFtdcErrorMsgType ErrMsg_BAD_PRICE_VALUE = "CTP:ä¸æ”¯æŒçš„ä»·æ ¼(éœ€è¦æ˜¯PriceTickçš„æ•´æ•°å€):";
+constexpr TThostFtdcErrorMsgType ErrMsg_NotExistOrder = "CTP:è®¢å•ä¸å­˜åœ¨å“¦";
+constexpr TThostFtdcErrorMsgType ErrMsg_AlreadyDoneOrder = "CTP:è®¢å•å·²ç»“æŸæ— æ³•å†æ’¤å“¦";
+constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportModifyOrder = "CTP:è®¢å•åªèƒ½æ’¤å•æ— æ³•æ”¹å•å“¦";
+constexpr TThostFtdcErrorMsgType ErrMsg_PRICETYPE_NOTSUPPORT_BYEXCHANGE = "CTP:äº¤æ˜“æ‰€ä¸æ”¯æŒçš„ä»·æ ¼ç±»å‹(OrderPriceType)";
+constexpr TThostFtdcErrorMsgType ErrMsg_BAD_FIELD_ONLY_SPECULATION = "CTP:æŠ¥å•å­—æ®µæœ‰è¯¯(æœ¬ç³»ç»Ÿåªæ”¯æŒæŠ•æœºç±»å‹)(CombHedgeFlag)";
+constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportContingentCondition = "CTP:ä¸æ”¯æŒç‰¹æ®Šçš„æ¡ä»¶å•å“¦(ContingentCondition)";
+constexpr TThostFtdcErrorMsgType ErrMsg_NotSupportTimeCondition = "CTP:ä¸æ”¯æŒçš„æœ‰æ•ˆæœŸç±»å‹å“¦(TimeCondition)";
+constexpr TThostFtdcErrorMsgType ErrMsg_NoMarketData = "CTP:è¯¥åˆçº¦æ²¡æœ‰è¡Œæƒ…æ•°æ®:";
+constexpr TThostFtdcErrorMsgType ErrMsg_INSTRUMENT_MARGINRATE_NOT_FOUND = "CTP:è¯¥åˆçº¦æ²¡æœ‰ä¿è¯é‡‘ç‡æ•°æ®";
+constexpr TThostFtdcErrorMsgType ERRMSG_INSTRUMENT_COMMISSIONRATE_NOT_FOUND = "CTP:è¯¥åˆçº¦æ²¡æœ‰æ‰‹ç»­è´¹ç‡æ•°æ®:";// not used
+constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_NOT_ENOUGH = "CTP:å¯ç”¨èµ„é‡‘ä¸è¶³";
+constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_POSITION_NOT_ENOUGH = "CTP:å¹³ä»“æ—¶æŒä»“ä¸è¶³,å½“å‰å¯å¹³æ•°é‡æ˜¯:";
+constexpr TThostFtdcErrorMsgType ERRMSG_AVAILABLE_TODAY_POSITION_NOT_ENOUGH = "CTP:å¹³ä»Šæ—¶æŒä»“ä¸è¶³,å½“å‰å¯å¹³æ•°é‡æ˜¯:";
 constexpr char CONDITIONAL_ORDER_SYSID_PREFIX[10] = "TJBD_";
-constexpr char STR_YUE[10] = "ÔÂ";
+constexpr char STR_YUE[10] = "æœˆ";
 
-// Í¨¹ı´¥·¢Ìõ¼şÀàĞÍ,ÅĞ¶ÏÊÇ·ñÊÇ(·ûºÏ±¾ÏµÍ³ĞèÇóµÄ)Ìõ¼şµ¥
+// é€šè¿‡è§¦å‘æ¡ä»¶ç±»å‹,åˆ¤æ–­æ˜¯å¦æ˜¯(ç¬¦åˆæœ¬ç³»ç»Ÿéœ€æ±‚çš„)æ¡ä»¶å•
 inline bool isConditionalType(TThostFtdcContingentConditionType	contingentCondition)
 {
     return contingentCondition == THOST_FTDC_CC_LastPriceGreaterThanStopPrice ||
@@ -44,32 +44,32 @@ inline std::string getStatusMsgByStatus(TThostFtdcOrderStatusType status)
     switch (status)
     {
         case THOST_FTDC_OST_AllTraded: // '0'
-            return "È«²¿³É½»";                
+            return "å…¨éƒ¨æˆäº¤";                
         case THOST_FTDC_OST_PartTradedQueueing: // '1'
-            return "²¿·Ö³É½»";
+            return "éƒ¨åˆ†æˆäº¤";
         case THOST_FTDC_OST_PartTradedNotQueueing: // '2'
-            return "²¿·Ö³É½»²»ÔÚ¶ÓÁĞÖĞ";
+            return "éƒ¨åˆ†æˆäº¤ä¸åœ¨é˜Ÿåˆ—ä¸­";
         case THOST_FTDC_OST_NoTradeQueueing: // '3'
-            return "Î´³É½»";
+            return "æœªæˆäº¤";
         case THOST_FTDC_OST_NoTradeNotQueueing: // '4'
-            return "Î´³É½»²»ÔÚ¶ÓÁĞÖĞ";
+            return "æœªæˆäº¤ä¸åœ¨é˜Ÿåˆ—ä¸­";
         case THOST_FTDC_OST_Canceled: // '5'
-            return "ÒÑ³·µ¥";
+            return "å·²æ’¤å•";
         case THOST_FTDC_OST_Unknown: // 'a'
-            return "Î´Öª";
+            return "æœªçŸ¥";
         case THOST_FTDC_OST_NotTouched: // 'b'
-            return "ÉĞÎ´´¥·¢";
+            return "å°šæœªè§¦å‘";
         case THOST_FTDC_OST_Touched: // 'c'
-            return "ÒÑ´¥·¢";
+            return "å·²è§¦å‘";
         default:
-            return "Î´Öª";
+            return "æœªçŸ¥";
     }
 }
 
 inline bool isTradingDay(const CLeeDateTime& date = CLeeDateTime::GetCurrentTime())
 {
     const int dayOfWeek = date.GetDayOfWeek();
-    if (dayOfWeek == 6 || dayOfWeek == 0)//TODO:²»»áÅĞ¶Ï³¤¼Ù¼ÙÈÕ
+    if (dayOfWeek == 6 || dayOfWeek == 0)//TODO:ä¸ä¼šåˆ¤æ–­é•¿å‡å‡æ—¥
     {
         return false;
     }
@@ -87,8 +87,8 @@ inline std::string getNextTradingDay(CLeeDateTime dt)
 inline std::string get_direction_name(const std::string& direction)
 {
     static const std::map<std::string, std::string> direction_name_map{
-        {std::string(1, THOST_FTDC_D_Buy), "Âò   "},
-        {std::string(1, THOST_FTDC_D_Sell), "   Âô"}
+        {std::string(1, THOST_FTDC_D_Buy), "ä¹°   "},
+        {std::string(1, THOST_FTDC_D_Sell), "   å–"}
     };
     auto it_direction = direction_name_map.find(direction);
     if (it_direction != direction_name_map.end())
@@ -97,7 +97,7 @@ inline std::string get_direction_name(const std::string& direction)
     }
     else
     {
-        return "Î´Öª";
+        return "æœªçŸ¥";
     }
 }
 inline std::string get_direction_name(TThostFtdcDirectionType dir)
@@ -107,16 +107,16 @@ inline std::string get_direction_name(TThostFtdcDirectionType dir)
 inline std::string get_exchange_name(const std::string& ExchangeID)
 {
     static const std::map<std::string, std::string> exchange_name_map{
-        {"INE", "ÄÜÔ´ÖĞĞÄ"},
-        {"SHFE", "ÉÏÆÚËù"},
-        {"CFFEX", "ÖĞ½ğËù"},
-        {"DCE", "´óÉÌËù"},
-        {"CZCE", "Ö£ÉÌËù"},
-        {"GFEX", "¹ãÆÚËù"},
-        {"BSE", "±±½»Ëù"},
-        {"SSE", "ÉÏ½»Ëù"},
-        {"SHSE", "ÉÏ½»Ëù"},
-        {"SZSE", "Éî½»Ëù"}
+        {"INE", "èƒ½æºä¸­å¿ƒ"},
+        {"SHFE", "ä¸ŠæœŸæ‰€"},
+        {"CFFEX", "ä¸­é‡‘æ‰€"},
+        {"DCE", "å¤§å•†æ‰€"},
+        {"CZCE", "éƒ‘å•†æ‰€"},
+        {"GFEX", "å¹¿æœŸæ‰€"},
+        {"BSE", "åŒ—äº¤æ‰€"},
+        {"SSE", "ä¸Šäº¤æ‰€"},
+        {"SHSE", "ä¸Šäº¤æ‰€"},
+        {"SZSE", "æ·±äº¤æ‰€"}
     };
     auto it_exchange = exchange_name_map.find(ExchangeID);
     if (it_exchange != exchange_name_map.end())
@@ -125,19 +125,19 @@ inline std::string get_exchange_name(const std::string& ExchangeID)
     }
     else
     {
-        return "Î´Öª";
+        return "æœªçŸ¥";
     }
 }
 inline std::string get_open_close_name(const std::string& open_or_close)
 {
     static const std::map<std::string, std::string> open_or_close_name_map{
-        {std::string(1, THOST_FTDC_OF_Open), "¿ª"},
-        {std::string(1, THOST_FTDC_OF_Close), "  Æ½"},
-        {std::string(1, THOST_FTDC_OF_CloseToday), "Æ½½ñ"},
-        {std::string(1, THOST_FTDC_OF_CloseYesterday), "Æ½×ò"},
-        {std::string(1, THOST_FTDC_OF_ForceClose), "Ç¿Æ½"},
-        {std::string(1, THOST_FTDC_OF_ForceOff), "Ç¿¼õ"},
-        {std::string(1, THOST_FTDC_OF_LocalForceClose), "±¾µØÇ¿Æ½"}
+        {std::string(1, THOST_FTDC_OF_Open), "å¼€"},
+        {std::string(1, THOST_FTDC_OF_Close), "  å¹³"},
+        {std::string(1, THOST_FTDC_OF_CloseToday), "å¹³ä»Š"},
+        {std::string(1, THOST_FTDC_OF_CloseYesterday), "å¹³æ˜¨"},
+        {std::string(1, THOST_FTDC_OF_ForceClose), "å¼ºå¹³"},
+        {std::string(1, THOST_FTDC_OF_ForceOff), "å¼ºå‡"},
+        {std::string(1, THOST_FTDC_OF_LocalForceClose), "æœ¬åœ°å¼ºå¹³"}
     };
     auto it_open_or_close = open_or_close_name_map.find(open_or_close);
     if (it_open_or_close != open_or_close_name_map.end())
@@ -146,161 +146,161 @@ inline std::string get_open_close_name(const std::string& open_or_close)
     }
     else
     {
-        return "Î´Öª";
+        return "æœªçŸ¥";
     }
 }
 inline std::string get_open_close_name(TThostFtdcOffsetFlagType open_or_close)
 {
     return get_open_close_name(std::string(1, open_or_close));
 }
-//ÅĞ¶ÏÊÇ·ñÊÇÆÚÈ¨Æ·ÖÖ
+//åˆ¤æ–­æ˜¯å¦æ˜¯æœŸæƒå“ç§
 inline bool isOptions(TThostFtdcProductClassType ProductClass)
 {
     return ProductClass == THOST_FTDC_PC_Options ||
         ProductClass == THOST_FTDC_PC_SpotOption;
 }
 
-///Æ½²ÖÃ÷Ï¸
+///å¹³ä»“æ˜ç»†
 struct CloseDetail
 {
-    ///¾­¼Í¹«Ë¾´úÂë
+    ///ç»çºªå…¬å¸ä»£ç 
     TThostFtdcBrokerIDType BrokerID;
-    ///Í¶×ÊÕß´úÂë
+    ///æŠ•èµ„è€…ä»£ç 
     TThostFtdcInvestorIDType InvestorID;
-    ///½»Ò×Ëù´úÂë
+    ///äº¤æ˜“æ‰€ä»£ç 
     TThostFtdcExchangeIDType ExchangeID;
-    ///ºÏÔ¼´úÂë
+    ///åˆçº¦ä»£ç 
     TThostFtdcInstrumentIDType InstrumentID;
-    ///¿ª²ÖÈÕÆÚ(½»Ò×ÈÕ)
+    ///å¼€ä»“æ—¥æœŸ(äº¤æ˜“æ—¥)
     TThostFtdcDateType OpenDate;
-    ///¿ª²Ö¼Û¸ñ
+    ///å¼€ä»“ä»·æ ¼
     TThostFtdcPriceType OpenPrice;
-    ///¿ª²Ö³É½»±àºÅ
+    ///å¼€ä»“æˆäº¤ç¼–å·
     TThostFtdcTradeIDType OpenTradeID;
-    ///Æ½²ÖÈÕÆÚ(½»Ò×ÈÕ)
+    ///å¹³ä»“æ—¥æœŸ(äº¤æ˜“æ—¥)
     TThostFtdcDateType CloseDate;
-    ///Æ½²ÖÊ±¼ä
+    ///å¹³ä»“æ—¶é—´
     TThostFtdcTimeType CloseTime;
-    ///Æ½²Ö³É½»¼Û¸ñ
+    ///å¹³ä»“æˆäº¤ä»·æ ¼
     TThostFtdcPriceType ClosePrice;
-    ///Æ½²Ö³É½»±àºÅ
+    ///å¹³ä»“æˆäº¤ç¼–å·
     TThostFtdcTradeIDType CloseTradeID;
-    ///Æ½²ÖÊÖÊı
+    ///å¹³ä»“æ‰‹æ•°
     TThostFtdcVolumeType CloseVolume;
-    ///Æ½²Ö³É½»µÄÂòÂô·½Ïò
+    ///å¹³ä»“æˆäº¤çš„ä¹°å–æ–¹å‘
     TThostFtdcDirectionType Direction;
-    ///×ò½áËã¼Û
+    ///æ˜¨ç»“ç®—ä»·
     TThostFtdcPriceType PreSettlementPrice;
-    ///Æ½²ÖÓ¯¿÷
+    ///å¹³ä»“ç›ˆäº
     TThostFtdcMoneyType CloseProfit;
-    ///Êµ¼ÊÆ½²ÖÀàĞÍ(Æ½½ñorÆ½×ò)
+    ///å®é™…å¹³ä»“ç±»å‹(å¹³ä»Šorå¹³æ˜¨)
     TThostFtdcOffsetFlagType CloseFlag;
-    ///È¨Àû½ğÊÕÖ§
+    ///æƒåˆ©é‡‘æ”¶æ”¯
     TThostFtdcMoneyType CashIn;
 };
 
-///½áËãµ¥
+///ç»“ç®—å•
 struct SettlementData
 {
-    ///¾­¼Í¹«Ë¾´úÂë
+    ///ç»çºªå…¬å¸ä»£ç 
     TThostFtdcBrokerIDType BrokerID;
-    ///Í¶×ÊÕß´úÂë
+    ///æŠ•èµ„è€…ä»£ç 
     TThostFtdcInvestorIDType InvestorID;
-    ///½áËãµ¥ÄÚÈİ
+    ///ç»“ç®—å•å†…å®¹
     std::string SettlementContent;
-    ///½áËãµ¥ÈÕÆÚ(½»Ò×ÈÕ)
+    ///ç»“ç®—å•æ—¥æœŸ(äº¤æ˜“æ—¥)
     TThostFtdcDateType TradingDay;
-    ///È·ÈÏÈÕÆÚ
+    ///ç¡®è®¤æ—¥æœŸ
     TThostFtdcDateType ConfirmDay;
-    ///È·ÈÏÊ±¼ä
+    ///ç¡®è®¤æ—¶é—´
     TThostFtdcTimeType ConfirmTime;
 };
 
 const std::string SETTLEMENT_CONTEXT(
-R"(settlement_header1=_                                            LocalCTPÏµÍ³                                           
-settlement_header2=_                                                                    ÖÆ±íÊ±¼ä Creation Date£º%8s
+R"(settlement_header1=_                                            LocalCTPç³»ç»Ÿ                                           
+settlement_header2=_                                                                    åˆ¶è¡¨æ—¶é—´ Creation Dateï¼š%8s
 settlement_header3=_----------------------------------------------------------------------------------------------------
-settlement_header4=_                             ½»Ò×½áËãµ¥(¶¢ÊĞ) Settlement Statement(MTM)                             
-settlement_header5=_¿Í»§ºÅ Client ID£º  %-16s¿Í»§Ãû³Æ Client Name£º%s
-settlement_header6=_ÈÕÆÚ Date£º%8s
+settlement_header4=_                             äº¤æ˜“ç»“ç®—å•(ç›¯å¸‚) Settlement Statement(MTM)                             
+settlement_header5=_å®¢æˆ·å· Client IDï¼š  %-16så®¢æˆ·åç§° Client Nameï¼š%s
+settlement_header6=_æ—¥æœŸ Dateï¼š%8s
 settlement_header7=_
 settlement_header8=_
 settlement_header9=_
 settlement_header10=_
-settlement_account_summary1=_                   ×Ê½ğ×´¿ö  ±ÒÖÖ£ºÈËÃñ±Ò  Account Summary  Currency£ºCNY 
+settlement_account_summary1=_                   èµ„é‡‘çŠ¶å†µ  å¸ç§ï¼šäººæ°‘å¸  Account Summary  Currencyï¼šCNY 
 settlement_account_summary2=_----------------------------------------------------------------------------------------------------
-settlement_account_summary3=_ÆÚ³õ½á´æ Balance b/f£º               %13.2f  »ù´¡±£Ö¤½ğ Initial Margin£º        %13.2f
-settlement_account_summary4=_³ö Èë ½ğ Deposit/Withdrawal£º        %13.2f  ÆÚÄ©½á´æ Balance c/f£º             %13.2f
-settlement_account_summary5=_Æ½²ÖÓ¯¿÷ Realized P/L£º              %13.2f  ÖÊ Ñº ½ğ Pledge Amount£º           %13.2f
-settlement_account_summary6=_³Ö²Ö¶¢ÊĞÓ¯¿÷ MTM P/L£º               %13.2f  ¿Í»§È¨Òæ Client Equity£º£º         %13.2f
-settlement_account_summary7=_ÆÚÈ¨Ö´ĞĞÓ¯¿÷ Exercise P/L£º          %13.2f  »õ±ÒÖÊÑº±£Ö¤½ğÕ¼ÓÃ FX Pledge Occ.£º%13.2f
-settlement_account_summary8=_ÊÖ Ğø ·Ñ Commission£º                %13.2f  ±£Ö¤½ğÕ¼ÓÃ Margin Occupied£º       %13.2f
-settlement_account_summary9=_ĞĞÈ¨ÊÖĞø·Ñ Exercise Fee£º            %13.2f  ½»¸î±£Ö¤½ğ Delivery Margin£º       %13.2f
-settlement_account_summary10=_½»¸îÊÖĞø·Ñ Delivery Fee£º            %13.2f  ¶àÍ·ÆÚÈ¨ÊĞÖµ Market value(long)£º  %13.2f
-settlement_account_summary11=_»õ±ÒÖÊÈë New FX Pledge£º             %13.2f  ¿ÕÍ·ÆÚÈ¨ÊĞÖµ Market value(short)£º %13.2f
-settlement_account_summary12=_»õ±ÒÖÊ³ö FX Redemption£º             %13.2f  ÊĞÖµÈ¨Òæ Market value(equity)£º    %13.2f
-settlement_account_summary13=_ÖÊÑº±ä»¯½ğ¶î Chg in Pledge Amt£º     %13.2f  ¿ÉÓÃ×Ê½ğ Fund Avail.£º             %13.2f
-settlement_account_summary14=_È¨Àû½ğÊÕÈë Premium received£º        %13.2f  ·ç ÏÕ ¶È Risk Degree£º            %13.2f%%
-settlement_account_summary15=_È¨Àû½ğÖ§³ö Premium paid£º            %13.2f  Ó¦×·¼Ó×Ê½ğ Margin Call£º           %13.2f
+settlement_account_summary3=_æœŸåˆç»“å­˜ Balance b/fï¼š               %13.2f  åŸºç¡€ä¿è¯é‡‘ Initial Marginï¼š        %13.2f
+settlement_account_summary4=_å‡º å…¥ é‡‘ Deposit/Withdrawalï¼š        %13.2f  æœŸæœ«ç»“å­˜ Balance c/fï¼š             %13.2f
+settlement_account_summary5=_å¹³ä»“ç›ˆäº Realized P/Lï¼š              %13.2f  è´¨ æŠ¼ é‡‘ Pledge Amountï¼š           %13.2f
+settlement_account_summary6=_æŒä»“ç›¯å¸‚ç›ˆäº MTM P/Lï¼š               %13.2f  å®¢æˆ·æƒç›Š Client Equityï¼šï¼š         %13.2f
+settlement_account_summary7=_æœŸæƒæ‰§è¡Œç›ˆäº Exercise P/Lï¼š          %13.2f  è´§å¸è´¨æŠ¼ä¿è¯é‡‘å ç”¨ FX Pledge Occ.ï¼š%13.2f
+settlement_account_summary8=_æ‰‹ ç»­ è´¹ Commissionï¼š                %13.2f  ä¿è¯é‡‘å ç”¨ Margin Occupiedï¼š       %13.2f
+settlement_account_summary9=_è¡Œæƒæ‰‹ç»­è´¹ Exercise Feeï¼š            %13.2f  äº¤å‰²ä¿è¯é‡‘ Delivery Marginï¼š       %13.2f
+settlement_account_summary10=_äº¤å‰²æ‰‹ç»­è´¹ Delivery Feeï¼š            %13.2f  å¤šå¤´æœŸæƒå¸‚å€¼ Market value(long)ï¼š  %13.2f
+settlement_account_summary11=_è´§å¸è´¨å…¥ New FX Pledgeï¼š             %13.2f  ç©ºå¤´æœŸæƒå¸‚å€¼ Market value(short)ï¼š %13.2f
+settlement_account_summary12=_è´§å¸è´¨å‡º FX Redemptionï¼š             %13.2f  å¸‚å€¼æƒç›Š Market value(equity)ï¼š    %13.2f
+settlement_account_summary13=_è´¨æŠ¼å˜åŒ–é‡‘é¢ Chg in Pledge Amtï¼š     %13.2f  å¯ç”¨èµ„é‡‘ Fund Avail.ï¼š             %13.2f
+settlement_account_summary14=_æƒåˆ©é‡‘æ”¶å…¥ Premium receivedï¼š        %13.2f  é£ é™© åº¦ Risk Degreeï¼š            %13.2f%%
+settlement_account_summary15=_æƒåˆ©é‡‘æ”¯å‡º Premium paidï¼š            %13.2f  åº”è¿½åŠ èµ„é‡‘ Margin Callï¼š           %13.2f
 settlement_account_summary16=_
-settlement_deposit_withdrawal_head1=_                                        ³öÈë½ğÃ÷Ï¸ Deposit/Withdrawal 
+settlement_deposit_withdrawal_head1=_                                        å‡ºå…¥é‡‘æ˜ç»† Deposit/Withdrawal 
 settlement_deposit_withdrawal_head2=_----------------------------------------------------------------------------------------------------------------
-settlement_deposit_withdrawal_head3=_|·¢ÉúÈÕÆÚ|       ³öÈë½ğÀàĞÍ       |      Èë½ğ      |      ³ö½ğ      |                   ËµÃ÷                   |
+settlement_deposit_withdrawal_head3=_|å‘ç”Ÿæ—¥æœŸ|       å‡ºå…¥é‡‘ç±»å‹       |      å…¥é‡‘      |      å‡ºé‡‘      |                   è¯´æ˜                   |
 settlement_deposit_withdrawal_head4=_|  Date  |          Type          |    Deposit     |   Withdrawal   |                   Note                   |
 settlement_deposit_withdrawal_head5=_----------------------------------------------------------------------------------------------------------------
-settlement_deposit_withdrawal_single_record1=_|%-8s|³öÈë½ğ                  |%16.2f|%16.2f|%-42s|
+settlement_deposit_withdrawal_single_record1=_|%-8s|å‡ºå…¥é‡‘                  |%16.2f|%16.2f|%-42s|
 settlement_deposit_withdrawal_end1=_----------------------------------------------------------------------------------------------------------------
-settlement_deposit_withdrawal_end2=_|¹²%4dÌõ|                        |%16.2f|%16.2f|                                          |
+settlement_deposit_withdrawal_end2=_|å…±%4dæ¡|                        |%16.2f|%16.2f|                                          |
 settlement_deposit_withdrawal_end3=_----------------------------------------------------------------------------------------------------------------
-settlement_deposit_withdrawal_end4=_³öÈë½ğ---Deposit/Withdrawal     ÒøÆÚ×ªÕË---Bank-Futures Transfer    ÒøÆÚ»»»ã---Bank-Futures FX Exchange
+settlement_deposit_withdrawal_end4=_å‡ºå…¥é‡‘---Deposit/Withdrawal     é“¶æœŸè½¬è´¦---Bank-Futures Transfer    é“¶æœŸæ¢æ±‡---Bank-Futures FX Exchange
 settlement_deposit_withdrawal_end5=_
-settlement_trade_head1=_                                                              ³É½»¼ÇÂ¼ Transaction Record 
+settlement_trade_head1=_                                                              æˆäº¤è®°å½• Transaction Record 
 settlement_trade_head2=_---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_trade_head3=_|³É½»ÈÕÆÚ| ½»Ò×Ëù |       Æ·ÖÖ       |      ºÏÔ¼      |Âò/Âô|   Í¶/±£    |  ³É½»¼Û  | ÊÖÊı |   ³É½»¶î   |       ¿ªÆ½       |  ÊÖĞø·Ñ  |  Æ½²ÖÓ¯¿÷  |     È¨Àû½ğÊÕÖ§      |  ³É½»ĞòºÅ  |
+settlement_trade_head3=_|æˆäº¤æ—¥æœŸ| äº¤æ˜“æ‰€ |       å“ç§       |      åˆçº¦      |ä¹°/å–|   æŠ•/ä¿    |  æˆäº¤ä»·  | æ‰‹æ•° |   æˆäº¤é¢   |       å¼€å¹³       |  æ‰‹ç»­è´¹  |  å¹³ä»“ç›ˆäº  |     æƒåˆ©é‡‘æ”¶æ”¯      |  æˆäº¤åºå·  |
 settlement_trade_head4=_|  Date  |Exchange|     Product      |   Instrument   | B/S |    S/H     |   Price  | Lots |  Turnover  |       O/C        |   Fee    |Realized P/L|Premium Received/Paid|  Trans.No. |
 settlement_trade_head5=_---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_trade_single_record1=_|%-8s|%-8s|%-18s|%-16s|%-5s|Í¶          |%10.3f|%6d|%12.2f|%-18s|%10.2f|%12.2f|%21.2f|%-12s|
+settlement_trade_single_record1=_|%-8s|%-8s|%-18s|%-16s|%-5s|æŠ•          |%10.3f|%6d|%12.2f|%-18s|%10.2f|%12.2f|%21.2f|%-12s|
 settlement_trade_end1=_---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_trade_end2=_|¹²%4dÌõ|        |                  |                      |            |          |%6d|%12.2f|                  |%10.2f|%12.2f|%21.2f|            |
+settlement_trade_end2=_|å…±%4dæ¡|        |                  |                      |            |          |%6d|%12.2f|                  |%10.2f|%12.2f|%21.2f|            |
 settlement_trade_end3=_---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_trade_end4=_ÄÜÔ´ÖĞĞÄ---INE  ÉÏÆÚËù---SHFE   ÖĞ½ğËù---CFFEX  ´óÉÌËù---DCE   Ö£ÉÌËù---CZCE   ¹ãÆÚËù---GFEX
-settlement_trade_end5=_Âò---Buy   Âô---Sell
-settlement_trade_end6=_Í¶---Speculation  ±£---Hedge  Ì×---Arbitrage °ã---General
-settlement_trade_end7=_¿ª---Open Æ½---Close Æ½½ñ---Close Today Ç¿Æ½---Forced Liquidation Æ½×ò---Close Prev. Ç¿¼õ---Forced Reduction ±¾µØÇ¿Æ½---Local Forced Liquidation 
+settlement_trade_end4=_èƒ½æºä¸­å¿ƒ---INE  ä¸ŠæœŸæ‰€---SHFE   ä¸­é‡‘æ‰€---CFFEX  å¤§å•†æ‰€---DCE   éƒ‘å•†æ‰€---CZCE   å¹¿æœŸæ‰€---GFEX
+settlement_trade_end5=_ä¹°---Buy   å–---Sell
+settlement_trade_end6=_æŠ•---Speculation  ä¿---Hedge  å¥—---Arbitrage èˆ¬---General
+settlement_trade_end7=_å¼€---Open å¹³---Close å¹³ä»Š---Close Today å¼ºå¹³---Forced Liquidation å¹³æ˜¨---Close Prev. å¼ºå‡---Forced Reduction æœ¬åœ°å¼ºå¹³---Local Forced Liquidation 
 settlement_trade_end8=_
-settlement_position_closed_head1=_                                                         Æ½²ÖÃ÷Ï¸ Position Closed 
+settlement_position_closed_head1=_                                                         å¹³ä»“æ˜ç»† Position Closed 
 settlement_position_closed_head2=_----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_closed_head3=_| Æ½²ÖÈÕÆÚ | ½»Ò×Ëù |       Æ·ÖÖ       |      ºÏÔ¼      |¿ª²ÖÈÕÆÚ |Âò/Âô|   ÊÖÊı   |     ¿ª²Ö¼Û    |     ×ò½áËã     |   ³É½»¼Û   |  Æ½²ÖÓ¯¿÷  |     È¨Àû½ğÊÕÖ§      |
+settlement_position_closed_head3=_| å¹³ä»“æ—¥æœŸ | äº¤æ˜“æ‰€ |       å“ç§       |      åˆçº¦      |å¼€ä»“æ—¥æœŸ |ä¹°/å–|   æ‰‹æ•°   |     å¼€ä»“ä»·    |     æ˜¨ç»“ç®—     |   æˆäº¤ä»·   |  å¹³ä»“ç›ˆäº  |     æƒåˆ©é‡‘æ”¶æ”¯      |
 settlement_position_closed_head4=_|Close Date|Exchange|      Product     |   Instrument   |Open Date| B/S |   Lots   |Pos. Open Price|   Prev. Sttl   |Trans. Price|Realized P/L|Premium Received/Paid|
 settlement_position_closed_head5=_----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 settlement_position_closed_single_record1=_|%-10s|%-8s|%-18s|%-16s|%-9s|%-5s|%10d|%15.3f|%16.3f|%12.3f|%12.2f|%21.2f|
 settlement_position_closed_end1=_----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_closed_end2=_|¹²%6dÌõ|        |                  |                |         |     |%10d|               |                |            |%12.2f|%21.2f|
+settlement_position_closed_end2=_|å…±%6dæ¡|        |                  |                |         |     |%10d|               |                |            |%12.2f|%21.2f|
 settlement_position_closed_end3=_----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_closed_end4=_ÄÜÔ´ÖĞĞÄ---INE  ÉÏÆÚËù---SHFE   ÖĞ½ğËù---CFFEX  ´óÉÌËù---DCE   Ö£ÉÌËù---CZCE   ¹ãÆÚËù---GFEX
-settlement_position_closed_end5=_Âò---Buy   Âô---Sell 
+settlement_position_closed_end4=_èƒ½æºä¸­å¿ƒ---INE  ä¸ŠæœŸæ‰€---SHFE   ä¸­é‡‘æ‰€---CFFEX  å¤§å•†æ‰€---DCE   éƒ‘å•†æ‰€---CZCE   å¹¿æœŸæ‰€---GFEX
+settlement_position_closed_end5=_ä¹°---Buy   å–---Sell 
 settlement_position_closed_end6=_
-settlement_position_detail_head1=_                                              ³Ö²ÖÃ÷Ï¸ Positions Detail
+settlement_position_detail_head1=_                                              æŒä»“æ˜ç»† Positions Detail
 settlement_position_detail_head2=_-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_detail_head3=_| ½»Ò×Ëù |       Æ·ÖÖ       |      ºÏÔ¼      |¿ª²ÖÈÕÆÚ |   Í¶/±£    |Âò/Âô|³Ö²ÖÁ¿ |    ¿ª²Ö¼Û     |     ×ò½áËã     |     ½áËã¼Û     |  ¸¡¶¯Ó¯¿÷  |  ¶¢ÊĞÓ¯¿÷ |  ±£Ö¤½ğ   |       ÆÚÈ¨ÊĞÖµ       |
+settlement_position_detail_head3=_| äº¤æ˜“æ‰€ |       å“ç§       |      åˆçº¦      |å¼€ä»“æ—¥æœŸ |   æŠ•/ä¿    |ä¹°/å–|æŒä»“é‡ |    å¼€ä»“ä»·     |     æ˜¨ç»“ç®—     |     ç»“ç®—ä»·     |  æµ®åŠ¨ç›ˆäº  |  ç›¯å¸‚ç›ˆäº |  ä¿è¯é‡‘   |       æœŸæƒå¸‚å€¼       |
 settlement_position_detail_head4=_|Exchange|     Product      |   Instrument   |Open Date|    S/H     | B/S |Positon|Pos. Open Price|   Prev. Sttl   |Settlement Price| Accum. P/L |  MTM P/L  |  Margin   | Market Value(Options)|
 settlement_position_detail_head5=_-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_detail_single_record1=_|%-8s|%-18s|%-16s|%9s|Í¶          |%-5s|%7d|%15.3f|%16.3f|%16.3f|%12.2f|%11.2f|%11.2f|                  0.00|
+settlement_position_detail_single_record1=_|%-8s|%-18s|%-16s|%9s|æŠ•          |%-5s|%7d|%15.3f|%16.3f|%16.3f|%12.2f|%11.2f|%11.2f|                  0.00|
 settlement_position_detail_end1=_-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_detail_end2=_|¹²%4dÌõ|                  |                |         |            |     |%7d|               |                |                |%12.2f|%11.2f|%11.2f|                  0.00|
+settlement_position_detail_end2=_|å…±%4dæ¡|                  |                |         |            |     |%7d|               |                |                |%12.2f|%11.2f|%11.2f|                  0.00|
 settlement_position_detail_end3=_-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_detail_end4=_ÄÜÔ´ÖĞĞÄ---INE  ÉÏÆÚËù---SHFE   ÖĞ½ğËù---CFFEX  ´óÉÌËù---DCE   Ö£ÉÌËù---CZCE   ¹ãÆÚËù---GFEX
-settlement_position_detail_end5=_Âò---Buy   Âô---Sell  
-settlement_position_detail_end6=_Í¶---Speculation  ±£---Hedge  Ì×---Arbitrage °ã---General
+settlement_position_detail_end4=_èƒ½æºä¸­å¿ƒ---INE  ä¸ŠæœŸæ‰€---SHFE   ä¸­é‡‘æ‰€---CFFEX  å¤§å•†æ‰€---DCE   éƒ‘å•†æ‰€---CZCE   å¹¿æœŸæ‰€---GFEX
+settlement_position_detail_end5=_ä¹°---Buy   å–---Sell  
+settlement_position_detail_end6=_æŠ•---Speculation  ä¿---Hedge  å¥—---Arbitrage èˆ¬---General
 settlement_position_detail_end7=_
-settlement_position_head1=_                                                         ³Ö²Ö»ã×Ü Positions
+settlement_position_head1=_                                                         æŒä»“æ±‡æ€» Positions
 settlement_position_head2=_------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_head3=_|       Æ·ÖÖ       |      ºÏÔ¼      |    Âò³Ö     |    Âò¾ù¼Û   |     Âô³Ö     |    Âô¾ù¼Û    |  ×ò½áËã  |  ½ñ½áËã  |³Ö²Ö¶¢ÊĞÓ¯¿÷|  ±£Ö¤½ğÕ¼ÓÃ   |  Í¶/±£     |   ¶àÍ·ÆÚÈ¨ÊĞÖµ   |   ¿ÕÍ·ÆÚÈ¨ÊĞÖµ    |
+settlement_position_head3=_|       å“ç§       |      åˆçº¦      |    ä¹°æŒ     |    ä¹°å‡ä»·   |     å–æŒ     |    å–å‡ä»·    |  æ˜¨ç»“ç®—  |  ä»Šç»“ç®—  |æŒä»“ç›¯å¸‚ç›ˆäº|  ä¿è¯é‡‘å ç”¨   |  æŠ•/ä¿     |   å¤šå¤´æœŸæƒå¸‚å€¼   |   ç©ºå¤´æœŸæƒå¸‚å€¼    |
 settlement_position_head4=_|      Product     |   Instrument   |  Long Pos.  |Avg Buy Price|  Short Pos.  |Avg Sell Price|Prev. Sttl|Sttl Today|  MTM P/L   |Margin Occupied|    S/H     |Market Value(Long)|Market Value(Short)|
 settlement_position_head5=_------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_single_record1=_|%-18s|%-16s|%13d|%13.3f|%14d|%14.3f|%10.3f|%10.3f|%12.2f|%15.2f|Í¶          |              0.00|               0.00|
+settlement_position_single_record1=_|%-18s|%-16s|%13d|%13.3f|%14d|%14.3f|%10.3f|%10.3f|%12.2f|%15.2f|æŠ•          |              0.00|               0.00|
 settlement_position_end1=_------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-settlement_position_end2=_|¹²%6dÌõ        |                |%13d|             |%14d|              |          |          |%12.2f|%15.2f|            |              0.00|               0.00|
+settlement_position_end2=_|å…±%6dæ¡        |                |%13d|             |%14d|              |          |          |%12.2f|%15.2f|            |              0.00|               0.00|
 settlement_position_end3=_------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 settlement_position_end4=_
 settlement_position_end5=_
