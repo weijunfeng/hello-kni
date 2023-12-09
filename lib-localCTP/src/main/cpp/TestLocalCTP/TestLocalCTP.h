@@ -5,8 +5,7 @@
 #ifndef LOCALCTP_TESTLOCALCTP_H
 #define LOCALCTP_TESTLOCALCTP_H
 
-#include <string>
 
-int testLocalCTP(const std::string &instrument_csv_path);
+int testLocalCTP(const char *serviceFilePath);
 
 #endif //LOCALCTP_TESTLOCALCTP_H

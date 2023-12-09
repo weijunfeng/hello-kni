@@ -1455,7 +1455,7 @@ void CLocalTraderApi::CSettlementHandler::doGenerateUserSettlement(
             + brokerID + "' and InvestorID='" + userID
             + "' and TradingDay = '" + TradingDay
             + "' and CashIn>0;";
-        sqlHandler.SelectData(selectTradeSql, tradeSqlValues);
+        sqlHandler->SelectData(selectTradeSql, tradeSqlValues);
         for (const auto& rowValue : tradeSqlValues)
         {
             try
@@ -1538,7 +1538,7 @@ void CLocalTraderApi::CSettlementHandler::doGenerateUserSettlement(
             + brokerID + "' and InvestorID='" + userID
             + "' and TradingDay = '" + TradingDay
             +"' ORDER BY TradeID ASC ;";
-        sqlHandler.SelectData(selectTradeSql, tradeSqlValues);
+        sqlHandler->SelectData(selectTradeSql, tradeSqlValues);
         if (tradeSqlValues.empty())//若没有找到该账户成交记录
         {
             return;
@@ -1624,7 +1624,7 @@ void CLocalTraderApi::CSettlementHandler::doGenerateUserSettlement(
             + brokerID + "' and InvestorID='" + userID
             + "' and CloseDate = '" + TradingDay
             + "';";
-        sqlHandler.SelectData(selectCloseDetailSql, closeDetailSqlValues);
+        sqlHandler->SelectData(selectCloseDetailSql, closeDetailSqlValues);
         if (closeDetailSqlValues.empty())//若没有找到该账户平仓明细记录
         {
             return;
@@ -1701,7 +1701,7 @@ void CLocalTraderApi::CSettlementHandler::doGenerateUserSettlement(
             + brokerID + "' and InvestorID='"
             + userID + "' and Volume != 0;";
             // = CThostFtdcInvestorPositionDetailFieldWrapper::generateSelectSqlByUserID(brokerID, userID);
-        sqlHandler.SelectData(selectPosDetailSql, posDetailSqlValues);
+        sqlHandler->SelectData(selectPosDetailSql, posDetailSqlValues);
         if (posDetailSqlValues.empty())//若没有找到该账户持仓明细记录
         {
             return;
@@ -1786,7 +1786,7 @@ void CLocalTraderApi::CSettlementHandler::doGenerateUserSettlement(
             + brokerID + "' and InvestorID='"
             + userID + "' and Position != 0;";
             // = CThostFtdcInvestorPositionFieldWrapper::generateSelectSqlByUserID(brokerID, userID);
-        sqlHandler.SelectData(selectPosSql, posSqlValues);
+        sqlHandler->SelectData(selectPosSql, posSqlValues);
         if (posSqlValues.empty())//若没有找到该账户持仓记录
         {
             return;

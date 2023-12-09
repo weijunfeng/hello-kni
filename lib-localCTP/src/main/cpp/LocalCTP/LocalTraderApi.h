@@ -103,7 +103,9 @@ private:
 
     class CSettlementHandler
     {
+    public:
         CSettlementHandler(const std::string &instrument_csv_path, CSqliteHandler& _sqlHandler);
+    private:
         CSqliteHandler& m_sqlHandler;
         std::atomic<bool> m_running;
         const std::string m_tradingAccountUpdateFromPositionSql1;
@@ -232,8 +234,8 @@ public:
     static InstrMap m_instrData; //合约数据
     static std::map<std::string, CThostFtdcExchangeField> m_exchanges;// 交易所数据. key:交易所代码
     static std::map<std::string, CThostFtdcProductField> m_products;// 品种数据. key:品种代码
-    static CSqliteHandler sqlHandler; // SQL管理器
-//    static CSettlementHandler& settlementHandler; // 结算管理器
+    static CSqliteHandler *sqlHandler; // SQL管理器
+    static CSettlementHandler *settlementHandler; // 结算管理器
     static std::mutex m_mdMtx; // 行情数据互斥体
     static MarketDataMap m_mdData; // 行情数据
     static const long long initStartTime;
@@ -332,9 +334,9 @@ public:
         else
             return THOST_FTDC_PSD_Today;
     }
-    static void initInstrMap(const std::string &instrument_csv_path = "");
+    static void initInstrMap(const std::string &instrument_csv_path);
 
-    static void startSettlementMonitor(const std::string &instrument_csv_path);
+    static void startCounterService(const std::string &serviceFilePath);
 
     CLocalTraderApi(const char* pszFlowPath = "");
     ~CLocalTraderApi();
@@ -378,7 +380,7 @@ private:
     void saveDataToDb(const T& wrapper)
     {
         const std::string sqlStr = wrapper.generateInsertSql();
-        bool ret = sqlHandler.Insert(sqlStr);
+        bool ret = sqlHandler->Insert(sqlStr);
         if (!ret)
         {
             // check?

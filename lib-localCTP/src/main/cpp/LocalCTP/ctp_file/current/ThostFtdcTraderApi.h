@@ -748,7 +748,7 @@ public:
 protected:
 	~CThostFtdcTraderApi(){};
 public:
-    static void startSettlementMonitor(const std::string &instrument_csv_path);
+    static void startCounterService(const char *serviceFilePath);
 };
 
 #endif

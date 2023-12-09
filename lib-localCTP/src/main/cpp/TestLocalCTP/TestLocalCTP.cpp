@@ -179,15 +179,11 @@ class MySpi : public CThostFtdcTraderSpi
 };
 
 
-int testLocalCTP(const std::string &instrument_csv_path)
+int testLocalCTP(const char *serviceFilePath)
 {
-    // 1. 设置输出重定向到 logcat上
-#ifdef __ANDROID__
-    AndroidLogcatBuf::redirect_stdout();
-#endif
-    // 2. 开启结算监控处理
-    CThostFtdcTraderApi::startSettlementMonitor(instrument_csv_path);
-    // 3. 创建 api 使用
+    // 1. 开启服务处理
+    CThostFtdcTraderApi::startCounterService(serviceFilePath);
+    // 2. 创建 api 使用
     pApi = CThostFtdcTraderApi::CreateFtdcTraderApi();
     std::cout << pApi->GetApiVersion() << std::endl;
     //std::cout << pApi->GetTradingDay() << std::endl;
