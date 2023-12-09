@@ -15,9 +15,9 @@ android {
         consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
             cmake {
-                arguments(
-                    "-DANDROID_STL=c++_shared"
-                )
+//                arguments(
+//                    "-DANDROID_STL=c++_shared"
+//                )
                 cppFlags("-std=c++14")
                 targets("localCTP")
             }
