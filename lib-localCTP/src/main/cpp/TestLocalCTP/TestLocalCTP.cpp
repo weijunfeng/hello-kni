@@ -4,13 +4,13 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-#include "stdafx.h"
 #include <fstream> // std::ofstream
 #include "ThostFtdcTraderApi.h"//CTP交易的头文件
 
 #ifdef __ANDROID__
 
 #include "android_logcat_buf.h"
+#include "TestLocalCTP.h"
 
 #endif
 
@@ -177,7 +177,6 @@ class MySpi : public CThostFtdcTraderSpi
     }
 
 };
-
 
 int testLocalCTP(const char *serviceFilePath)
 {

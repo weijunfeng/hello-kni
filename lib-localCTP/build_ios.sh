@@ -8,6 +8,8 @@ source ~/.bash_profile
 #构建脚本目录位置
 cd "$(dirname "$0")" || exit
 buildDir="$(pwd)"/build
+cmakeToolchainFile=${buildDir}/../../ios-cmake/ios.toolchain.cmake
+cmakeListsPath=${buildDir}/../src/main/cpp
 
 rm -f -r "$buildDir/ios" && mkdir -p "$buildDir/ios" && cd "$buildDir/ios" || exit 1
 
@@ -23,8 +25,8 @@ rm -f -r "$buildDir/ios" && mkdir -p "$buildDir/ios" && cd "$buildDir/ios" || ex
 mkdir -p "Release-arm64" && cd "Release-arm64" || exit 1
 
 cmake \
-  ../../../src/main/cpp -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
-  -DCMAKE_TOOLCHAIN_FILE=../../../../ios-cmake/ios.toolchain.cmake \
+  ${cmakeListsPath} -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
+  -DCMAKE_TOOLCHAIN_FILE=${cmakeToolchainFile} \
   -DPLATFORM=OS64
 cmake --build . --config Release
 
@@ -32,8 +34,8 @@ cd ..
 mkdir -p "Release-simulator-x86_64" && cd "Release-simulator-x86_64" || exit 1
 
 cmake \
-  ../../../src/main/cpp -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
-  -DCMAKE_TOOLCHAIN_FILE=../../../../ios-cmake/ios.toolchain.cmake \
+  ${cmakeListsPath} -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
+  -DCMAKE_TOOLCHAIN_FILE=${cmakeToolchainFile} \
   -DPLATFORM=SIMULATOR64
 cmake --build . --config Release
 
@@ -41,8 +43,8 @@ cd ..
 mkdir -p "Release-simulator-arm64" && cd "Release-simulator-arm64" || exit 1
 
 cmake \
-  ../../../src/main/cpp -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
-  -DCMAKE_TOOLCHAIN_FILE=../../../../ios-cmake/ios.toolchain.cmake \
+  ${cmakeListsPath} -G Xcode -DCMAKE_CXX_FLAGS=-std=c++14 \
+  -DCMAKE_TOOLCHAIN_FILE=${cmakeToolchainFile} \
   -DPLATFORM=SIMULATORARM64
 cmake --build . --config Release
 
@@ -54,7 +56,10 @@ lipo -create \
   -output ./liblocalCTP.a
 
 cd ..
-mkdir -p public && cp -r $buildDir/../src/main/cpp/LocalCTP/ctp_file/current/ public/
+
+# 复制公开的头文件
+mkdir -p public && cp -r ${buildDir}/../src/main/cpp/LocalCTP/ctp_file/current/ public/
+
 mkdir -p "Release-xcframework" && cd "Release-xcframework" || exit 1
 xcodebuild -create-xcframework \
   -library ../Release-simulator-combined/liblocalCTP.a -headers ../public \

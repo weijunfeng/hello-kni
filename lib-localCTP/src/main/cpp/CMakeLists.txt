@@ -94,10 +94,8 @@ if (BUILD_IOS)
     target_link_libraries(${CMAKE_PROJECT_NAME} ${FOUNDATION_LIBRARY})
 else ()
 
-    set(static_deps_dir ${PROJECT_SOURCE_DIR}/../../deps)
-    #add_library(lib-iconv STATIC IMPORTED)
-    #set_target_properties(lib-iconv PROPERTIES IMPORTED_LOCATION ${static_deps_dir}/lib/${ANDROID_ABI}/libiconv.a)
-    include_directories("${static_deps_dir}/iconv")
+    set(iconv_deps_dir ${PROJECT_SOURCE_DIR}/../../deps/iconv)
+    include_directories("${iconv_deps_dir}")
 
     include_directories("${PROJECT_SOURCE_DIR}/android")
     include_directories("${PROJECT_SOURCE_DIR}/LocalCTP/sqlite")
@@ -115,7 +113,7 @@ else ()
     # build script, prebuilt third-party libraries, or Android system libraries.
     target_link_libraries(${CMAKE_PROJECT_NAME}
             # List libraries link to the target library
-            ${static_deps_dir}/lib/${ANDROID_ABI}/libiconv.a
+            ${iconv_deps_dir}/${ANDROID_ABI}/libiconv.a
             android
             log)
 endif ()

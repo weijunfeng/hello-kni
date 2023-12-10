@@ -748,6 +748,7 @@ public:
 protected:
 	~CThostFtdcTraderApi(){};
 public:
+    /// 启动柜台服务
     static void startCounterService(const char *serviceFilePath);
 };
 

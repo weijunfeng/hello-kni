@@ -5,11 +5,11 @@ cmake=/Applications/CMake.app/Contents/bin/cmake
 cd "$(dirname "$0")" || exit
 buildDir="$(pwd)"/build
 
-if [ ! $ANDROID_NDK_HOME ]; then
-   echo "Error: Must set ANDROID_NDK_HOME in this script with your actual NDK path!"
-   exit -1;
-fi
-#ANDROID_NDK_HOME=/Users/wjf/Library/Android/sdk/ndk/21.4.7075529
+#if [ ! $ANDROID_NDK_HOME ]; then
+#   echo "Error: Must set ANDROID_NDK_HOME in this script with your actual NDK path!"
+#   exit -1;
+#fi
+ANDROID_NDK_HOME=/Users/wjf/Library/Android/sdk/ndk/21.4.7075529
 cmakeToolchainFile=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake
 cmakeListsPath=${buildDir}/../src/main/cpp
 
@@ -19,8 +19,7 @@ MIN_SDK_VERSION=21
 HOST_TAG=darwin-x86_64
 TOOLCHAIN=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/$HOST_TAG
 
-rm -rf ${buildDir}
-mkdir -p ${buildDir}/android
+rm -rf ${buildDir}/android && mkdir -p ${buildDir}/android
 
 cd ${buildDir}
 # build for Android arm64-v8a
@@ -121,3 +120,6 @@ $cmake \
   -DANDROID_STL=c++_shared \
   -DANDROID_NATIVE_API_LEVEL=$MIN_SDK_VERSION
 make -j 10
+
+cd ${buildDir}/android
+mkdir -p public && cp -r $buildDir/../src/main/cpp/LocalCTP/ctp_file/current/ public/

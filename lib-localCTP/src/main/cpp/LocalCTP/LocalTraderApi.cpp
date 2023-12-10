@@ -1073,20 +1073,17 @@ void CLocalTraderApi::Release() {
 }
 
 void CThostFtdcTraderApi::startCounterService(const char *serviceFilePath) {
-    CLocalTraderApi::startCounterService(serviceFilePath);
-}
-
-void CLocalTraderApi::startCounterService(const std::string &serviceFilePath) {
     // 下面代码只需要执行一次即可
     static std::once_flag startServiceFlag;
     std::call_once(startServiceFlag, [serviceFilePath]() {
 #ifdef __ANDROID__
         AndroidLogcatBuf::redirect_stdout();
 #endif
+        std::string serviceFilePathStr = serviceFilePath;
         if (!createDirectory(serviceFilePath)) {
-            throw std::runtime_error("create dir fail, path:" + serviceFilePath);
+            throw std::runtime_error("create dir fail, path:" + serviceFilePathStr);
         }
-        auto sqlHandler = new CSqliteHandler(serviceFilePath + "/LocalCTP.db", {
+        auto sqlHandler = new CSqliteHandler(serviceFilePathStr + "/LocalCTP.db", {
                 "CThostFtdcInvestorPositionField", "CThostFtdcInvestorPositionDetailField",
                 "CThostFtdcOrderField",
                 "CThostFtdcTradeField", "CThostFtdcTradingAccountField", "CThostFtdcInstrumentField",
@@ -1094,8 +1091,8 @@ void CLocalTraderApi::startCounterService(const std::string &serviceFilePath) {
                 "CloseDetail", "SettlementData"
         });
         CLocalTraderApi::sqlHandler = sqlHandler;
-        CLocalTraderApi::settlementHandler = new CSettlementHandler(
-                serviceFilePath + "/instrument.csv", *sqlHandler);
+        CLocalTraderApi::settlementHandler = new CLocalTraderApi::CSettlementHandler(
+                serviceFilePathStr + "/instrument.csv", *sqlHandler);
     });
 }
 

@@ -100,7 +100,7 @@ private:
         CLocalTraderApi& api;
         bool isConditionalOrder;
     };
-
+public:
     class CSettlementHandler
     {
     public:
@@ -335,8 +335,6 @@ public:
             return THOST_FTDC_PSD_Today;
     }
     static void initInstrMap(const std::string &instrument_csv_path);
-
-    static void startCounterService(const std::string &serviceFilePath);
 
     CLocalTraderApi(const char* pszFlowPath = "");
     ~CLocalTraderApi();
