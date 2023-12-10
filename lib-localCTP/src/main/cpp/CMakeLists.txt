@@ -22,6 +22,15 @@ add_definitions(-D_DEBUG)
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "iOS")
     set(BUILD_IOS true)
+    add_definitions(-D__APPLE__)
+    #去掉编译过程产生的多余的文件 减小so库的大小
+    #隐藏符号表，使得IDE导出的函数不显示，有助于减少so库大小
+    #    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
+    #    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+    #    set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -s")
+    #    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -s")
+    #    set(CMAKE_C_VISIBILITY_PRESET hidden)
+    #    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     set(BUILD_IOS true)
 endif ()
