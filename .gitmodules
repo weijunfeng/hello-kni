@@ -22,3 +22,6 @@
 [submodule "localCTP"]
 	path = localCTP
 	url = https://github.com/dearleeyoung/LocalCTP.git
+[submodule "shinnytech/trade-gateway"]
+	path = shinnytech/trade-gateway
+	url = https://github.com/shinnytech/open-trade-gateway.git
