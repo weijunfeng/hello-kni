@@ -1,68 +1,60 @@
 ﻿#include "stdafx.h"
+#ifdef LIB_ICONV_SUPPORT
 #include "iconv.h"
 #include "iostream"
+#endif
 
 namespace localCTP
 {
-
-    class converter
-    {
+#ifdef LIB_ICONV_SUPPORT
+    class converter {
     public:
-        converter(const std::string& out_encode,
-                  const std::string& in_encode,
-                  bool               ignore_error = false,
-                  size_t             buf_size     = 1024)
-                : m_ignore_error(ignore_error), m_buf_size(buf_size)
-        {
-            if (buf_size == 0)
-            {
+        converter(const std::string &out_encode,
+                  const std::string &in_encode,
+                  bool ignore_error = false,
+                  size_t buf_size = 1024)
+                : ignore_error_(ignore_error),
+                  buf_size_(buf_size) {
+            if (buf_size == 0) {
                 throw std::runtime_error("buffer size must be greater than zero");
             }
 
             iconv_t conv = ::iconv_open(out_encode.c_str(), in_encode.c_str());
-            if (conv == (iconv_t)-1)
-            {
+            if (conv == (iconv_t) -1) {
                 if (errno == EINVAL)
-                {
-                    throw std::runtime_error("not supported from " + in_encode + " to " + out_encode);
-                }
+                    throw std::runtime_error(
+                            "not supported from " + in_encode + " to " + out_encode);
                 else
-                {
                     throw std::runtime_error("unknown error");
-                }
             }
-            m_iconv = conv;
+            iconv_ = conv;
         }
 
-        ~converter()
-        {
-            iconv_close(m_iconv);
+        ~converter() {
+            iconv_close(iconv_);
         }
 
-        void convert(const std::string& input, std::string& output) const
-        {
+        void convert(const std::string &input, std::string &output) const {
+            // copy the string to a buffer as iconv function requires a non-const char
+            // pointer.
             std::vector<char> in_buf(input.begin(), input.end());
-            char*             src_ptr  = &in_buf[0];
-            size_t            src_size = input.size();
+            char *src_ptr = &in_buf[0];
+            size_t src_size = input.size();
 
-            std::vector<char> buf(m_buf_size);
-            std::string       dst;
-            while (0 < src_size)
-            {
-                char*  dst_ptr  = &buf[0];
+            std::vector<char> buf(buf_size_);
+            std::string dst;
+            while (0 < src_size) {
+                char *dst_ptr = &buf[0];
                 size_t dst_size = buf.size();
-                size_t res      = ::iconv(m_iconv, &src_ptr, &src_size, &dst_ptr, &dst_size);
-                if (res == (size_t)-1)
-                {
-                    if (errno == E2BIG)
-                    {}
-                    else if (m_ignore_error)
-                    {
+                size_t res = ::iconv(iconv_, &src_ptr, &src_size, &dst_ptr, &dst_size);
+                if (res == (size_t) -1) {
+                    if (errno == E2BIG) {
+                        // ignore this error
+                    } else if (ignore_error_) {
+                        // skip character
                         ++src_ptr;
                         --src_size;
-                    }
-                    else
-                    {
+                    } else {
                         check_convert_error();
                     }
                 }
@@ -72,10 +64,8 @@ namespace localCTP
         }
 
     private:
-        static void check_convert_error()
-        {
-            switch (errno)
-            {
+        void check_convert_error() const {
+            switch (errno) {
                 case EILSEQ:
                 case EINVAL:
                     throw std::runtime_error("invalid multibyte chars");
@@ -84,13 +74,46 @@ namespace localCTP
             }
         }
 
-        iconv_t      m_iconv;
-        bool         m_ignore_error;
-        const size_t m_buf_size;
+        iconv_t iconv_;
+        bool ignore_error_;
+        const size_t buf_size_;
     };
 
+#else
+    using CovtByNm = CodecvtByname<wchar_t, char, mbstate_t>;
+
+    CovtByNm* getCovtByNm()
+    {
+        CovtByNm* wcPtr(nullptr);
+#ifdef _WIN32
+        const char* GBK_LOCALE_NAME = ".936";// GBK locale name in windows
+        wcPtr = new CovtByNm(GBK_LOCALE_NAME);
+#else
+        const char* GBK_LOCALE_NAME1 = "zh_CN.gbk";// GBK locale name in linux
+        const char* GBK_LOCALE_NAME2 = "zh_CN.gb18030";// GB18030 locale name in linux
+        const char* GBK_LOCALE_NAME3 = "zh_CN.gb2312";// GB2312 locale name in linux
+        try
+        {
+            wcPtr = new CovtByNm(GBK_LOCALE_NAME1);
+        }
+        catch (...)
+        {
+            try
+            {
+                wcPtr = new CovtByNm(GBK_LOCALE_NAME2);
+            }
+            catch (...)
+            {
+                wcPtr = new CovtByNm(GBK_LOCALE_NAME3);
+            }
+        }
+#endif
+        return wcPtr;
+    }
+#endif
 std::string gbk_to_utf8(const std::string& str)
 {
+#ifdef LIB_ICONV_SUPPORT
     converter   conv("UTF-8", "GBK", true, 1024);
     std::string output;
     try
@@ -102,10 +125,18 @@ std::string gbk_to_utf8(const std::string& str)
         std::cerr << "gbk_to_utf8 exception:" << e.what() << std::endl;
     }
     return output;
+#else
+    static std::wstring_convert<CovtByNm> convert(getCovtByNm());
+    std::wstring tmp_wstr = convert.from_bytes(str);
+    static std::wstring_convert<std::codecvt_utf8<wchar_t>> cv2;
+
+    return cv2.to_bytes(tmp_wstr);
+#endif
 }
 
 std::string utf8_to_gbk(const std::string& str)
 {
+#ifdef LIB_ICONV_SUPPORT
     converter   conv("GBK", "UTF-8", true, 1024);
     std::string output;
     try
@@ -117,6 +148,13 @@ std::string utf8_to_gbk(const std::string& str)
         std::cerr << "utf8_to_gbk exception:" << e.what() << std::endl;
     }
     return output;
+#else
+    static std::wstring_convert<std::codecvt_utf8<wchar_t> > conv;
+    std::wstring tmp_wstr = conv.from_bytes(str);
+    static std::wstring_convert<CovtByNm> convert(getCovtByNm());
+
+    return convert.to_bytes(tmp_wstr);
+#endif
 }
 
 std::string base64_encode(unsigned char const* bytes_to_encode, unsigned int in_len)

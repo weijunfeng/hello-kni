@@ -13,24 +13,15 @@ project("localCTP")
 
 #设置so库类型
 set(CMAKE_BUILD_TYPE "release")
-#设置so库的输出路径
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../../../libs/${ANDROID_ABI})
 
 #format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
 add_definitions(-Wno-format-security)
 add_definitions(-D_DEBUG)
+add_definitions(-DLIB_ICONV_SUPPORT)
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "iOS")
     set(BUILD_IOS true)
     add_definitions(-D__APPLE__)
-    #去掉编译过程产生的多余的文件 减小so库的大小
-    #隐藏符号表，使得IDE导出的函数不显示，有助于减少so库大小
-    #    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
-    #    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
-    #    set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -s")
-    #    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -s")
-    #    set(CMAKE_C_VISIBILITY_PRESET hidden)
-    #    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     set(BUILD_IOS true)
 endif ()
