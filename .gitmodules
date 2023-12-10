@@ -25,3 +25,6 @@
 [submodule "shinnytech/trade-gateway"]
 	path = shinnytech/trade-gateway
 	url = https://github.com/shinnytech/open-trade-gateway.git
+[submodule "build-script"]
+	path = build-script
+	url = git@github.com:weijunfeng/simple-build-ios-and-android-script.git
