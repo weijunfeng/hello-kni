@@ -80,6 +80,7 @@ namespace localCTP
     };
 
 #else
+    //std::codecvt_byname 在 android上使用崩溃
     using CovtByNm = CodecvtByname<wchar_t, char, mbstate_t>;
 
     CovtByNm* getCovtByNm()

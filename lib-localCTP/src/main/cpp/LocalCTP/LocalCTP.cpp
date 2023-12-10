@@ -567,7 +567,7 @@ ACCUMULATE_WITH_SAME_NAME(FrozenCash) ";"
     , m_sleepSecond(1)
     , m_settlementStartHour(17)
     , m_count(0)
-    , m_timerThread([this,instrument_csv_path]() {
+    , m_timerThread([this, instrument_csv_path]() {
         CLocalTraderApi::initInstrMap(instrument_csv_path);
         if (!checkSettlement())//启动后先判断结算一次
         {
