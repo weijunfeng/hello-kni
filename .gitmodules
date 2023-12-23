@@ -31,3 +31,6 @@
 [submodule "google/jna"]
 	path = google/jna
 	url = https://github.com/java-native-access/jna.git
+[submodule "google/JNAerator"]
+	path = google/JNAerator
+	url = https://github.com/nativelibs4java/JNAerator.git
