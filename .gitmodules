@@ -28,3 +28,6 @@
 [submodule "build-script"]
 	path = build-script
 	url = git@github.com:weijunfeng/simple-build-ios-and-android-script.git
+[submodule "google/jna"]
+	path = google/jna
+	url = https://github.com/java-native-access/jna.git
