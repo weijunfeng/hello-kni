@@ -34,3 +34,6 @@
 [submodule "google/JNAerator"]
 	path = google/JNAerator
 	url = https://github.com/nativelibs4java/JNAerator.git
+[submodule "rust/rust-android-gradle"]
+	path = rust/rust-android-gradle
+	url = https://github.com/mozilla/rust-android-gradle.git
