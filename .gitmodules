@@ -37,3 +37,6 @@
 [submodule "rust/rust-android-gradle"]
 	path = rust/rust-android-gradle
 	url = https://github.com/mozilla/rust-android-gradle.git
+[submodule "rust/RetouchPic"]
+	path = rust/RetouchPic
+	url = https://github.com/whitestarlau/RetouchPic
