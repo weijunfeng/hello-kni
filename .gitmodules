@@ -43,3 +43,6 @@
 [submodule "rust/cargo-ndk-android-gradle"]
 	path = rust/cargo-ndk-android-gradle
 	url = https://github.com/willir/cargo-ndk-android-gradle.git
+[submodule "rust/num"]
+	path = rust/num
+	url = https://github.com/rust-num/num.git
