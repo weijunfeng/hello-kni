@@ -46,3 +46,18 @@
 [submodule "rust/num"]
 	path = rust/num
 	url = https://github.com/rust-num/num.git
+[submodule "rust/sunface/rust-course"]
+	path = rust/sunface/rust-course
+	url = https://github.com/sunface/rust-course.git
+[submodule "rust/sunface/rust-by-practice"]
+	path = rust/sunface/rust-by-practice
+	url = https://github.com/sunface/rust-by-practice.git
+[submodule "rust/sunface/new-rusty-book"]
+	path = rust/sunface/new-rusty-book
+	url = https://github.com/sunface/new-rusty-book.git
+[submodule "rust/sunface/tokio-course"]
+	path = rust/sunface/tokio-course
+	url = https://github.com/sunface/tokio-course.git
+[submodule "rust/sunface/too-many-lists"]
+	path = rust/sunface/too-many-lists
+	url = https://github.com/sunface/too-many-lists.git
