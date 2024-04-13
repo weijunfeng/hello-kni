@@ -61,3 +61,6 @@
 [submodule "rust/sunface/too-many-lists"]
 	path = rust/sunface/too-many-lists
 	url = https://github.com/sunface/too-many-lists.git
+[submodule "rust/rust-lang/book"]
+	path = rust/rust-lang/book
+	url = https://github.com/rust-lang/book.git
