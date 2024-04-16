@@ -35,7 +35,7 @@
 	path = google/JNAerator
 	url = https://github.com/nativelibs4java/JNAerator.git
 [submodule "rust/rust-android-gradle"]
-	path = rust/rust-android-gradle
+	path = rust/mozilla/rust-android-gradle
 	url = https://github.com/mozilla/rust-android-gradle.git
 [submodule "rust/RetouchPic"]
 	path = rust/RetouchPic
@@ -64,3 +64,9 @@
 [submodule "rust/rust-lang/book"]
 	path = rust/rust-lang/book
 	url = https://github.com/rust-lang/book.git
+[submodule "rust/mozilla/application-services"]
+	path = rust/mozilla/application-services
+	url = https://github.com/mozilla/application-services.git
+[submodule "rust/FeatureProbe/client-sdk-mobile"]
+	path = rust/FeatureProbe/client-sdk-mobile
+	url = https://github.com/FeatureProbe/client-sdk-mobile.git
