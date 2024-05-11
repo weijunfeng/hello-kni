@@ -73,3 +73,6 @@
 [submodule "rust/jni/jni-rs"]
 	path = rust/jni/jni-rs
 	url = https://github.com/jni-rs/jni-rs.git
+[submodule "google/jcpp"]
+	path = google/jcpp
+	url = https://github.com/shevek/jcpp.git
