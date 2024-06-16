@@ -76,3 +76,6 @@
 [submodule "google/jcpp"]
 	path = google/jcpp
 	url = https://github.com/shevek/jcpp.git
+[submodule "rust/zino"]
+	path = rust/zino
+	url = https://github.com/zino-rs/zino.git
